@@ -1,46 +1,62 @@
-# Vice Platinum — GTA VI Trophy Guide & Tracker
+# Vice Platinum
 
-A free, offline trophy guide and tracker for **Grand Theft Auto VI** on PlayStation 5. Open it in a desktop browser and it runs entirely from its own files — no account, no network, no ads.
+An offline companion for hunting the **Grand Theft Auto VI** platinum on PlayStation 5. Vice Platinum pairs a complete trophy guide with a progress tracker, ships as a folder of plain static files, and asks for nothing in return: no sign-up, no connection, no advertising. Once you have the files, you can cut the network entirely and lose nothing.
 
-![Checklist](screenshots/1-checklist.jpg)
+![The checklist view](screenshots/1-checklist.jpg)
 
-## What it does
+## The trophy list
 
-- **All 55 official trophies** — 1 platinum, 2 gold, 6 silver, 46 bronze, 28 of them hidden on PSN — each with its official name, description and grade.
-- **Checklist tracker** — tick trophies off as they pop; progress is saved in your browser (localStorage), with **export and import** so you can move or back it up.
-- **PSN progress counters** — the 20 trophies PSN itself counts (250 stunts, 42 range golds, $250,000 laundered…) get steppers that fill as you play.
-- **Filters and search** — by grade, by kind (Story, Side Missions, Activities, World & Collectibles, Crime & Combat, Money & Property, Moments, Completion) and by earned/remaining.
-- **Spoiler guard** — hidden trophies stay masked (no name, no description) until you earn them or choose to reveal them.
-- **A guide to every trophy, in our own words** — what to do and when it matters, with the sources for each entry named on its page. Where a trigger was not confirmed at launch, the guide says so instead of inventing one.
-- **Roadmap to the platinum** — eight stages built from the official descriptions, with live progress.
-- **Missables, honestly** — nothing in the list is confirmed missable; the one community-flagged trophy and the save habits that cover it are spelled out.
-- **Next Up planner** — your closest counters, next story steps and one-off moments, computed from your own progress.
-- **Personal notes** per trophy, stored locally.
+The guide covers the full official set of **55 trophies**: a single platinum, 2 golds, 6 silvers and 46 bronzes. PlayStation hides 28 of them until they pop, and each entry here carries the name, wording and grade exactly as published.
 
-## Run it
+Twenty trophies are not simple one-and-done unlocks — PlayStation tracks them against a running total (250 stunts, gold in 42 shooting-range challenges, $250,000 of cash laundered, and so on). Those entries get a stepper counter in the app, so the number on screen can stay matched to the number in game.
 
-The app is plain static files under `app/` — there is no build step.
+## Tracking your run
+
+- Tick a trophy the moment it pops. Your state persists in the browser's localStorage, and the header always shows how many you hold and what share of the list that is.
+- Back the save up or carry it to another machine with the JSON export; the matching import restores it.
+- Narrow the list with a text search, or filter by grade, by category — Story, Side Missions, Activities, World & Collectibles, Crime & Combat, Money & Property, Moments, Completion — or by whether a trophy is still outstanding.
+- Attach a private note to any trophy. Notes never leave the browser either.
+
+## Spoilers stay hidden
+
+Because 28 trophies are secret on PSN, the app ships with a spoiler guard switched on: an unearned hidden trophy appears only as "Hidden trophy", with its name and description withheld. Earning it lifts the mask, and so does deliberately revealing it from its own guide page — the choice is yours, trophy by trophy, or all at once in the settings.
+
+## The guide itself
+
+Every trophy has a dedicated page explaining, in original prose written for this project, what the unlock asks of you and the point in the game where it matters. Each page credits the material it rests on. Where launch-week information could not pin a trigger down, the page admits the gap openly rather than dressing a guess up as fact.
+
+Three further views build on the list:
+
+- **Roadmap** — the road to platinum broken into eight stages, sequenced from the official descriptions and updated live from your ticks.
+- **Missables** — the straight answer is that no trophy is confirmed missable. The page names the single trophy community guides have flagged as a maybe, and describes the save routine that removes the worry.
+- **Next Up** — a shortlist drawn from your own save: the counters nearest completion, the next story beats, and the one-off moments still waiting.
+
+## Running it locally
+
+There is nothing to compile. The whole application lives under `app/`:
 
 ```sh
-node serve.ts          # then open http://localhost:8080
+node serve.ts
 ```
 
-Any static file server pointed at `app/` works just as well. Turn your network off: everything still works.
+That serves the folder at http://localhost:8080. Prefer a different static server? Point any of them at `app/` and you will get the same result.
 
-`main.ts` is the entry program for the make.fun competition this was built for: it copies `app/` and `screenshots/` to the output directory and writes the dossier the judges read, using the vendored library in `vendor/` (left byte-for-byte as shipped).
+## Where the information comes from
+
+- Names, descriptions and grades reproduce the official PlayStation 5 trophy list for Grand Theft Auto VI as captured on 2026-11-18, taken from [Exophase](https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/).
+- Progress totals and which trophies are hidden come from [PSNProfiles](https://psnprofiles.com/trophies/43531-grand-theft-auto-vi), checked against community lists published during launch week.
+- The advice is this project's own work. `gen-trophies.mjs` holds the guide text and generates `app/data/trophies.json` from it; no wording is lifted from any existing guide.
+
+## About this entry
+
+Vice Platinum was created for **gta6-trophy-guide-01** ("Build the best GTA 6 trophy guide") on make.fun. Readers arriving from there can use the referral link https://make.fun/r/1c94brae.
+
+`main.ts` exists for that competition: it assembles the submission by copying `app/` and `screenshots/` into an output directory and emitting the dossier file the judges review, relying on the vendored helper under `vendor/`, which ships exactly as provided and is not modified here. To produce the same output yourself:
 
 ```sh
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
-## Data & sources
+## Legal
 
-- Trophy names, descriptions and grades: the official PlayStation 5 list for Grand Theft Auto VI, frozen 2026-11-18, via [Exophase](https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/).
-- PSN progress targets and hidden flags: via [PSNProfiles](https://psnprofiles.com/trophies/43531-grand-theft-auto-vi), cross-checked against launch-week community lists.
-- Guides: written for this app from the official descriptions (`gen-trophies.mjs` holds the text and builds `app/data/trophies.json`). Nothing is copied from another guide.
-
-Fan-made and open source (MIT). Not affiliated with Rockstar Games or Take-Two Interactive; no Rockstar artwork or logos are used anywhere in the app.
-
-## Competition
-
-Built for make.fun's **gta6-trophy-guide-01** ("Build the best GTA 6 trophy guide"). If you found this through make.fun, the referral link is https://make.fun/r/1c94brae.
+Released under the MIT license. Vice Platinum is an unofficial fan project: it has no connection to Rockstar Games or Take-Two Interactive, and the app contains none of their artwork or logos.

@@ -40,7 +40,7 @@ function counterHTML(t) {
     <button type="button" data-count="${t.id}|-1" aria-label="one less">−</button>
     <strong>${fmt(cur)} / ${fmt(t.target)}</strong>
     <button type="button" data-count="${t.id}|1" aria-label="one more">+</button>
-    <span class="bar"><div style="width:${pct}%"></div></span>
+    <span class="bar"><span style="width:${pct}%"></span></span>
     <span class="muted small">${esc(t.targetLabel || '')}</span>
   </span>`;
 }
@@ -156,7 +156,7 @@ function trophyView(id) {
     ${t.missable ? '<div class="warn" style="margin-top:14px"><strong>Missable warning.</strong> Launch-week community guides flag this as the one trophy that might be missable. The flag is unconfirmed — see the Missables page for the full picture and the save habit that covers it.</div>' : ''}
     <h3>How to earn it</h3>
     <p class="guide-text">${esc(t.guide)}</p>
-    ${t.target ? `<h3>Progress</h3><p>${counterHTML(t)}</p><p class="muted small">PSN counts this trophy to ${fmt(t.target)} (${esc(t.targetLabel || '')}). Keep the counter here in step and the trophy pops the moment the target is met in game.</p>` : ''}
+    ${t.target ? `<h3>Progress</h3><div class="counter-line">${counterHTML(t)}</div><p class="muted small">PSN counts this trophy to ${fmt(t.target)} (${esc(t.targetLabel || '')}). Keep the counter here in step and the trophy pops the moment the target is met in game.</p>` : ''}
     <h3>Sources</h3>
     <p class="sources small">${esc(t.sources)}</p>
     <h3>Your notes</h3>

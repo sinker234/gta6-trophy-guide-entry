@@ -7,7 +7,7 @@
 // own copy writes.
 //
 // The app: a checklist tracker over all 55 official GTA VI trophies (official names, descriptions and grades,
-// PSN progress counters, filters by grade and kind, a spoiler guard for the 28 hidden trophies, export and
+// PSN progress counters, search and filters by grade, kind and status, a spoiler guard for the 28 hidden trophies, export and
 // import, personal notes), a guide to each trophy in our own words with its sources named, an eight-stage
 // roadmap to the platinum, an honest missables page, and a Next Up planner. Screenshots: shots.json says which
 // views they show.
