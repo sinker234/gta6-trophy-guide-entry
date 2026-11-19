@@ -1,5 +1,9 @@
 # Vice Platinum
 
+[![make.fun · gta6-trophy-guide-01](https://make.fun/badge/gta6-trophy-guide-01.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![rank](https://make.fun/badge/gta6-trophy-guide-01/sinker234/gta6-trophy-guide-entry/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![reward](https://make.fun/badge/gta6-trophy-guide-01/sinker234/gta6-trophy-guide-entry/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+
 An offline companion for hunting the **Grand Theft Auto VI** platinum on PlayStation 5. Vice Platinum pairs a complete trophy guide with a progress tracker, ships as a folder of plain static files, and asks for nothing in return: no sign-up, no connection, no advertising. Once you have the files, you can cut the network entirely and lose nothing.
 
 ![The checklist view](screenshots/1-checklist.jpg)
